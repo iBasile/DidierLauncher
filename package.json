@@ -1,7 +1,7 @@
 {
     "name": "Didier-Launcher",
     "preductname": "Didier Launcher",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Launcher Mincraft pour jouer en Moddé",
     "main": "src/app.js",
     "author": {
