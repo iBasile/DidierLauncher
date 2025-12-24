@@ -1,17 +1,78 @@
-.login .container {
+.login {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
+    position: relative;
+}
+
+.login .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .login-tabs {
-    position: absolute;
-    padding: 15px;
-    background: var(--background);
-    border-radius: 15px;
+    position: relative;
+    padding: 0;
+    background: rgba(15, 15, 19, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     text-align: center;
-    min-width: 40%;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.login-tabs .login-header {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.login-tabs .login-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Logo en haut à gauche au-dessus de l'image de fond */
+.login-tabs .login-logo {
+    position: absolute;
+    top: 16px;
+    left: 24px;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    z-index: 1;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+
+.login-tabs .login-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 0;
+    text-align: left;
+}
+
+.login-tabs .login-content {
+    padding: 30px 40px 40px;
 }
 
 .login-home,
@@ -21,30 +82,131 @@
     display: none;
 }
 
-.login-text {
-    font-size: 1.3rem;
+.login-AZauth.active-tab,
+.login-AZauth-A2F.active-tab {
+    display: block;
 }
 
-.connect,
-.cancel {
-    background: none;
-    color: var(--color);
-    border: solid 4px var(--element-color);
-    border-radius: 10px;
-    padding: 0.3rem 4rem;
-    font-size: inherit;
-    font-weight: bold;
-    margin: 15px 10px;
+.login-text {
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.input-login {
+    margin: 25px 0;
+    text-align: left;
+}
+
+.input-login > div {
+    margin-bottom: 20px;
+}
+
+.input-login label {
+    display: block;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
 }
 
 .input-login .email,
 .input-login .password,
 .A2F {
-    color: var(--color);
-    background: none;
-    border: solid 2px var(--element-color);
-    border-radius: 30px;
-    width: 50%;
-    padding: 0.4rem 1rem;
-    margin-top: 10px;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.7);
+    background: #15151C;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-family: Inter, Open Sans, Segoe UI, sans-serif;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.input-login .email:focus,
+.input-login .password:focus,
+.A2F:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: #1F1F2A;
+    color: #FFFFFF;
+    outline: none;
+}
+
+.input-login .email::placeholder,
+.input-login .password::placeholder,
+.A2F::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.input-login > div > span,
+.input-login > div > a {
+    display: inline-block;
+    font-size: 13px;
+    color: #89898D;
+    margin-top: 6px;
+    margin-right: 10px;
+}
+
+.input-login > div > a {
+    color: #FFFFFF;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.login-options {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 35px 0 25px 0;
+}
+
+.connect,
+.cancel {
+    background: #737373;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+    max-width: 200px;
+}
+
+.connect:hover {
+    background: #848484;
+}
+
+.connect:active {
+    background: #686868;
+}
+
+.cancel {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cancel:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.cancel[style*="display: none"] {
+    display: none !important;
+}
+
+.login-tabs > div:last-child {
+    font-size: 13px;
+    color: #89898D;
+    margin-top: 15px;
+}
+
+.login-tabs > div:last-child a {
+    color: #FFFFFF;
+    text-decoration: underline;
+    cursor: pointer;
 }

@@ -1,233 +1,73 @@
 .home .container {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-}
-
-/*******************************************************************************
- *                                                                             *
- * Status server                                                               *
- *                                                                             *
- ******************************************************************************/
-
-.status-server {
     position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--background);
-    width: 25rem;
-    height: 3rem;
-    color: var(--color);
-    border-radius: 10px;
-    margin-top: 3rem;
-    padding: 1rem;
-    text-align: center;
-}
-
-.server-status-icon {
-    height: 3.3rem;
-}
-
-.server-status-name {
-    font-size: 1.5rem;
-    color: var(--color);
-}
-
-.server-status-text {
-    font-size: 0.6rem;
-    color: #1AC707;
-}
-
-.server-status-infos .red {
-    color: #FF0409;
-}
-
-.status-player-count {
-    background: var(--shadow);
-    min-width: 3rem;
-    height: 3rem;
-    border-radius: 10px;
-}
-
-.player-count {
-    font-size: 1.5rem;
-    margin: 0.4rem 0.5rem;
-}
-
-.status-player-count:after {
-    position: absolute;
-    content: '';
-    width: 10px;
-    height: 10px;
-    top: 10px;
-    right: 10px;
-    border-radius: 15px;
-    border: solid 5px var(--background);
-    background: #1AC707;
-}
-
-.red:after {
-    background: #FF0409;
-}
-
-.home-bottom {
-    position: relative;
+    height: 100%;
     width: 100%;
-    height: calc(100% - 80px - 8rem);
-    display: flex;
+    overflow: hidden;
 }
 
-/*******************************************************************************
- *                                                                             *
- * news server                                                                 *
- *                                                                             *
- ******************************************************************************/
-
-.new-tab {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 85%;
-    height: 100%;
-}
-
-.titre-tab-new {
-    margin-top: 1rem;
-    font-size: 2rem;
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-    background: var(--background-transparent);
-    color: var(--color);
-}
-
-.news-list {
-    width: 90%;
-    height: 100%;
-    border-radius: 10px;
-    margin: 1rem 0;
-}
-
-.news-block {
-    width: 100%;
-    margin: 0 0 1rem 0;
-    border-radius: 10px;
-    background: var(--background-transparent);
-}
-
-.news-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    align-items: center;
-}
-
-.header-text .title {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    font-size: 1.2rem;
-    text-align: center;
-}
-
-.news-header .date {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.news-content .bbWrapper {
-    padding: 0 1.5rem;
-    padding-bottom: 1rem;
-    font-size: 1.2rem;
-
-}
-
-.news-content .bbWrapper p {
-    font-weight: 100;
-    margin: 0;
-
-}
-
-.news-content .bbWrapper .news-author {
-    margin-top: 1rem;
-    text-align: end;
-    font-size: 0.8rem;
-}
-
-.news-content .bbWrapper .news-author span {
-    font-weight: 700;
-}
-
-/*******************************************************************************
- *                                                                             *
- * social server                                                               *
- *                                                                             *
- ******************************************************************************/
-
-.social-tab {
-    position: absolute;
-    display: flex;
-    bottom: 0;
-    right: 0;
-    width: 15%;
-    height: calc(80% - 1rem);
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-.social-list {
-    border-radius: 10px;
-    height: 100%;
-}
-
-.social-block {
-    display: flex;
-    background: var(--background-transparent);
-    width: 90px;
-    height: 90px;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    font-size: 2rem;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-block .icon-social {
-    pointer-events: none;
-    background-repeat: no-repeat;
-    height: 55%;
-    width: 55%;
-    filter: var(--svg-color);
-}
-
-/*******************************************************************************
- *                                                                             *
- * sidebar                                                                     *
- *                                                                             *
- ******************************************************************************/
-
+/* Sidebar -------------------------------------------------- */
 .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(180deg, #14141B 0%, #09090C 100%);
+    border-right: 2px solid rgba(255, 255, 255, 0.10);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 90px;
-    background: var(--background-transparent);
+    padding-top: 36px;
+}
+
+.sidebar-slot {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #26262A;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.06);
+    margin-bottom: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background-color .2s ease, box-shadow .2s ease, transform .04s ease;
+    position: relative;
+}
+.sidebar-slot:hover {
+    background-color: #2f2f34;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.14);
+}
+
+.sidebar-home {
+    background-image: url('../../images/svgs/Icon_Play.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px ;
+    background-color: #0f201d;
+}
+
+
+.sidebar-switch {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
 }
 
 .player-options {
+    position: absolute;
+    bottom: 120px;
+    left: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border-radius: 15px;
     height: 3rem;
-    margin: 0 1.5rem;
+    width: 60px;
 }
 
 .player-head {
-    background: url('../../images/default/setve.png'), no-repeat;
+    background: url('../../images/default/setve.png') no-repeat;
     background-size: cover;
     image-rendering: pixelated;
     transition: var(--transition);
@@ -237,16 +77,109 @@
     border-radius: 15px;
 }
 
-.player-menu {
-    color: var(--element-color);
-    transform: rotate(270deg);
-    pointer-events: none;
+.settings-btn {
+    position: absolute;
+    bottom: 48px;
+    left: 22px;
+    width: 56px;
+    height: 56px;
+    font-size: 0;
+    color: transparent;
+    border-radius: 12px;
+    background-color: #26262A;
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.06);
+    background-image: url('../../images/svgs/Icon_Settings.svg');
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color .2s ease, box-shadow .2s ease, transform .04s ease;
+}
+.settings-btn:hover {
+    background-color: #2f2f34;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.14);
+}
+.settings-btn.active,
+.settings-btn:active {
+    background-color: #f4f4f4;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.18);
+}
+
+/* Main area ------------------------------------------------ */
+.main-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-left: 100px; /* sidebar width */
+}
+
+.status-server {
+    position: absolute;
+    top: 24px;
+    left: 32px;
+    display: inline-flex;
+    align-items: center;
+    background: #f3f3f3;
+    height: 2.4rem;
+    color: #c62828;
+    border-radius: 12px;
+    padding: 0.5rem 1.4rem 0.5rem 1.7rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+    text-align: left;
+    font-weight: 700;
+    gap: 8px;
+    min-width: 210px;
+}
+
+.server-status-icon { display: none; }
+.server-status-name { display: none; }
+
+.server-status-text {
+    font-size: 0.95rem;
+    color: inherit;
+    opacity: 1;
+}
+
+.status-player-count {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    background: #44ACFF;
+    border: solid 5px #f3f3f3;
+    border-radius: 50%;
+}
+
+.player-count,
+.status-player-count:after,
+.server-status-name,
+.server-status-icon { display: none; }
+
+/* Hero / Play ---------------------------------------------- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .play-elements {
+    position: absolute;
+    left: 48px;
+    bottom: 48px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.play-title {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
 }
 
 .play-instance {
@@ -254,37 +187,45 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    border: solid 3px var(--element-color);
-    border-radius: 15px;
-    height: 3.2rem;
-    padding-right: 1.9rem;
+    border: none;
+    border-radius: 12px;
+    height: 3.4rem;
+    padding-right: 2.6rem;
+    background: #FFFFFF;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
 .play-btn {
     border: none;
-    border-radius: 10px;
-    background: none;
-    color: var(--color);
-    font-size: 2rem;
-    font-weight: bolder;
-    padding: 0 1.5rem;
+    border-radius: 6px;
+    background: transparent;
+    color: #272727;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0 32px;
+    width: 380px;
+    text-align: left;
     pointer-events: none;
 }
 
 .instance-select {
     display: flex;
     align-items: center;
+    justify-content: center;
     position: absolute;
-    right: -3;
-    top: -2;
-    color: var(--element-color);
+    right: -18px;
+    top: -6px;
+    color: #9F9FA0;
     font-size: 1rem;
-    height: calc(100% - 1px);
-    border: solid 3px var(--element-color);
+    height: 56px;
+    width: 56px;
+    border: solid 3px #D9D9D9;
     text-align: center;
-    border-radius: 15px;
-    padding: 0 0.5rem;
+    border-radius: 16px;
+    background: #FFFFFF;
     cursor: pointer;
+    pointer-events: auto; /* assure le clic */
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
 }
 
 .instance-select:before {
@@ -305,34 +246,30 @@
 
 .progress-bar::-webkit-progress-bar {
     background-color: var(--background);
-    border: solid 1px var(--element-color);
+    border: solid 1px #5c5c5c;
     border-radius: 10px;
 }
 
 .progress-bar::-webkit-progress-value {
-    background-color: var(--element-color);
+    background-color: #a0a0a0;
     border-radius: 10px;
 }
 
-.settings-btn {
-    width: 3rem;
-    height: 3rem;
-    font-size: 3rem;
-    color: var(--element-color);
-    margin: 0 1.5rem;
-}
-
+/* Instance popup ------------------------------------------- */
 .instance-popup {
-    position: absolute;
+    position: fixed; /* couvre toute la fenêtre */
+    left: 0;
+    top: 0;
     display: none;
     width: 100%;
     height: 100%;
     background: #000000b3;
-    z-index: 10;
+    z-index: 1000; /* au-dessus de tout */
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    pointer-events: all;
 }
 
 .instances-tab {

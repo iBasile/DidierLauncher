@@ -48,26 +48,6 @@ img {
     opacity: 1;
 }
 
-.splash-author {
-    position: absolute;
-    top: 326px;
-    left: 0px;
-    width: 400px;
-    text-align: center;
-    transition: opacity 1.5s;
-    font: normal normal normal 9px/13px Poppins;
-    color: var(--color);
-    opacity: 0;
-}
-
-.splash-author .author {
-    font: normal normal bold 9px/13px Poppins;
-}
-
-.splash-author.opacity {
-    opacity: 1;
-}
-
 .message {
     position: absolute;
     top: 347px;
