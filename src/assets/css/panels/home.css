@@ -114,46 +114,138 @@
     margin-left: 100px; /* sidebar width */
 }
 
+/* News panel ------------------------------------------------ */
+.news-panel {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    width: min(340px, 32vw);
+    height: calc(100% - 48px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(17, 17, 17, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 18px 36px rgba(0,0,0,0.35);
+    padding: 16px 16px 18px 16px;
+    color: #f5f5f5;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.news-header-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fefefe;
+    margin: 0;
+}
+
+.news-list {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.news-block {
+    background: rgba(0,0,0,0.32);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 10px 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+}
+
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.header-text .title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f8f8f8;
+}
+
+.news-header .date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #dcdcdc;
+}
+
+.news-content .bbWrapper {
+    font-size: 0.9rem;
+    color: #e7e7e7;
+    line-height: 1.4;
+}
+
+.news-content .bbWrapper p {
+    margin: 0;
+}
+
+.news-author {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: #cfcfcf;
+}
+
 .status-server {
     position: absolute;
     top: 24px;
     left: 32px;
     display: inline-flex;
     align-items: center;
-    background: #f3f3f3;
-    height: 2.4rem;
-    color: #c62828;
+    background: #ffffff;
+    height: 2.6rem;
+    color: #111111;
     border-radius: 12px;
-    padding: 0.5rem 1.4rem 0.5rem 1.7rem;
+    padding: 0.5rem 1.4rem 0.5rem 1.4rem;
     box-shadow: 0 2px 10px rgba(0,0,0,0.18);
     text-align: left;
     font-weight: 700;
-    gap: 8px;
-    min-width: 210px;
+    gap: 10px;
+    min-width: 230px;
 }
 
-.server-status-icon { display: none; }
-.server-status-name { display: none; }
 
 .server-status-text {
     font-size: 0.95rem;
-    color: inherit;
+    color: #111111;
     opacity: 1;
 }
 
 .status-player-count {
-    position: absolute;
-    left: 8px;
-    top: 8px;
-    width: 10px;
-    height: 10px;
-    background: #44ACFF;
-    border: solid 5px #f3f3f3;
-    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #111111;
+    font-weight: 600;
+    position: relative;
 }
 
-.player-count,
-.status-player-count:after,
+.status-player-count::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #2ecc71;
+}
+
+.status-player-count.offline::before {
+    background: #d32f2f;
+}
+
+.player-count {
+    display: inline-flex;
+}
+
 .server-status-name,
 .server-status-icon { display: none; }
 
