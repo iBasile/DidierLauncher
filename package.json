@@ -1,13 +1,13 @@
 {
-    "name": "Didier-Launcher",
-    "preductname": "Didier Launcher",
-    "version": "0.2.0",
+    "name": "DidierCraft",
+    "preductname": "DidierCraft",
+    "version": "0.2.1",
     "description": "Launcher Mincraft pour jouer en Moddé",
     "main": "src/app.js",
     "author": {
-        "name": "luuxis, Basile, Inc.",
-        "email": "contact@luuxis.fr",
-        "url": "https://github.com/luuxis"
+        "name": "Basile",
+        "email": "basile.bargibant@icloud.com",
+        "url": "https://github.com/iBasile"
     },
     "url": "https://bargicloud.alwaysdata.net/didier",
     "scripts": {

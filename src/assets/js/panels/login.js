@@ -21,10 +21,13 @@ class Login {
             }
         }
         
-        document.querySelector('.cancel-home').addEventListener('click', () => {
-            document.querySelector('.cancel-home').style.display = 'none'
-            changePanel('settings')
-        })
+        const cancelHomeBtn = document.querySelector('.cancel-home');
+        if (cancelHomeBtn) {
+            cancelHomeBtn.addEventListener('click', () => {
+                cancelHomeBtn.style.display = 'none';
+                changePanel('settings');
+            });
+        }
     }
 
     async getMicrosoft() {
