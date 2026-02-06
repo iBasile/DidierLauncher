@@ -1,7 +1,7 @@
 {
     "name": "DidierCraft",
     "preductname": "DidierCraft",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "description": "Launcher Mincraft pour jouer en Moddé",
     "main": "src/app.js",
     "author": {
