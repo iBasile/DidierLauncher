@@ -1,7 +1,7 @@
 {
     "name": "DidierCraft",
     "preductname": "DidierCraft",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "description": "Launcher Mincraft pour jouer en Moddé",
     "main": "src/app.js",
     "author": {
@@ -9,7 +9,7 @@
         "email": "basile.bargibant@icloud.com",
         "url": "https://github.com/iBasile"
     },
-    "url": "https://cloud.dedica-marcq.com/basile/",
+    "url": "https://cloud.dedica-marcq.com/basile",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
